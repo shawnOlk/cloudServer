@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:8888/
+  profiles:
+    active: dev
+
+eureka:
+  instance:
+    hostname: ${hostname}
+  client:
+    registerWithEureka: ${registerWithEureka}
+    fetchRegistry: ${registerWithEureka}
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

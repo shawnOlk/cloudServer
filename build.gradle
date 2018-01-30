@@ -29,6 +29,8 @@ ext {
 
 dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-config', version: '1.4.1.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.9.RELEASE'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

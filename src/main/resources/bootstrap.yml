@@ -1,16 +1,16 @@
 spring:
   cloud:
     config:
-      label: master
       uri: http://localhost:8888/
   profiles:
     active: dev
 
+
 eureka:
   instance:
-    hostname: ${hostname}
+    hostname: ${config.eureka.hostname}
   client:
-    registerWithEureka: ${registerWithEureka}
-    fetchRegistry: ${registerWithEureka}
+    registerWithEureka: ${config.eureka.registerWithEureka}
+    fetchRegistry: ${config.eureka.fetchRegistry}
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${config.eureka.connectPort}/eureka/
